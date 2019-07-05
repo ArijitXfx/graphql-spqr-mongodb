@@ -1,5 +1,6 @@
 package com.tricon.bean;
 
+
 import io.aexp.nodes.graphql.annotations.GraphQLArgument;
 import io.aexp.nodes.graphql.annotations.GraphQLProperty;
 

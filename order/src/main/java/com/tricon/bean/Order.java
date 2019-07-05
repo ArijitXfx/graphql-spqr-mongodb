@@ -1,5 +1,7 @@
 package com.tricon.bean;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,15 +17,15 @@ public class Order {
 	@Id
 	private String id;
 	private String custId;
-	private String productId;
+	private List<String> productIds;
 	private Customer customer;
-	private Product product;
+	private List<Product> products;
 
-	public Order(String id, String custId, String productId) {
+	public Order(String id, String custId, List<String> productIds) {
 		super();
 		this.id = id;
 		this.custId = custId;
-		this.productId = productId;
+		this.productIds = productIds;
 	}
 	public String getId() {
 		return id;
@@ -37,11 +39,11 @@ public class Order {
 	public void setCustId(String custId) {
 		this.custId = custId;
 	}
-	public String getProductId() {
-		return productId;
+	public List<String> getProductIds() {
+		return productIds;
 	}
-	public void setProductId(String productId) {
-		this.productId = productId;
+	public void setProductId(List<String> productIds) {
+		this.productIds = productIds;
 	}
 	public Customer getCustomer() {
 		return customer;
@@ -49,10 +51,10 @@ public class Order {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public Product getProduct() {
-		return product;
+	public List<Product> getProducts() {
+		return products;
 	}
-	public void setProduct(Product product) {
-		this.product = product;
+	public void setProduct(List<Product> products) {
+		this.products = products;
 	}
 }

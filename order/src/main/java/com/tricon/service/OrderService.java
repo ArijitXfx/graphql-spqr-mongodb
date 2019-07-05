@@ -1,6 +1,7 @@
 package com.tricon.service;
 
 import java.net.MalformedURLException;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,8 +62,12 @@ public class OrderService {
 		Order order = orderRepository.findById(id).orElseThrow(()->new RuntimeException("Order Not Found!"));
 		Arguments arguments = new Arguments("customer", new Argument<String>("id", order.getCustId()));
 		order.setCustomer((Customer) getRequest("http://localhost:8081/graphql", arguments, Customer.class));
-		arguments = new Arguments("product", new Argument<String>("id", order.getProductId()));
-		order.setProduct((Product) getRequest("http://localhost:8082/graphql", arguments, Product.class));
+		List<Product> list = new LinkedList<Product>();
+		for(String i:order.getProductIds()) {
+			arguments = new Arguments("product", new Argument<String>("id", i));
+			list.add((Product) getRequest("http://localhost:8082/graphql", arguments, Product.class));
+		}
+		order.setProduct(list);
 		return order;
 	}
 }

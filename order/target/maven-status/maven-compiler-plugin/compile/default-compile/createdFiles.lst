@@ -1,0 +1,10 @@
+com\tricon\repository\CustomerRepository.class
+com\tricon\repository\OrderRepository.class
+com\tricon\bean\Customer.class
+com\tricon\config\MongoDBConfig$1.class
+com\tricon\bean\Order.class
+com\tricon\service\OrderService.class
+com\tricon\repository\ProductRepository.class
+com\tricon\bean\Product.class
+com\tricon\config\MongoDBConfig.class
+com\tricon\OrderApplication.class

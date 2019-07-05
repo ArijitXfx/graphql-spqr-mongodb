@@ -81,6 +81,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>order-ms</finalName>
+		<finalName>order</finalName>
 	</build>
 </project>

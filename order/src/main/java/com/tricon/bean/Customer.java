@@ -1,5 +1,6 @@
 package com.tricon.bean;
 
+
 import io.aexp.nodes.graphql.annotations.GraphQLArgument;
 import io.aexp.nodes.graphql.annotations.GraphQLProperty;
 
@@ -10,6 +11,10 @@ public class Customer {
 	private String id;
 	private String email;
 	private String password;
+	
+	public Customer() {
+		super();
+	}
 	
 	public Customer(String id, String email, String password) {
 		super();
@@ -36,10 +41,4 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public Customer() {
-		super();
-	}
-	
-	
 }
